@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Baloo Bhai 2', cursive;
+}
+
+.navbar{
+    display: flex;
+    height: 100px;
+    position:sticky;
+    width: 100%;
+    background-color:#000000
+}
+.leftnav{
+    width:auto;
+    background-color:#000000;
+    display: flex;
+}
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px;
+}
+.nav-list li a{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+}
+.nav-list li a:hover{
+    color:grey;
+}
+.nav-list ul{
+    display: flex;
+    margin-left: 30px;
+    padding-left: 50px;
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+}
+.leftnav img{
+    width: 140px;
+    height: 100px;
+}
+.coverpg{
+    background:rgba(0, 0, 0, 0.6) url(../Images/bg\ img.jpg);
+    background-blend-mode: darken;
+    width: 100%;
+    height: 630px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.coverpg-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+}
+.coverpg-text h1, .coverpg-text p, .coverpg-text a{
+    color: white;
+}
+.coverpg-text h1{
+    font-size: 5.7rem;
+    padding: 1px;
+}
+.coverpg-text p{
+    font-size: 1.8rem;
+    padding-bottom: 18px;
+}
+.coverpg-text a{
+    text-decoration: none;
+    color:black;
+    padding: 6px 22px;
+    background-color:white;
+}
+.coverpg-text a:hover{
+    background-color: white;
+    background: rgba(0, 0, 0, 0.6) url(../Images/bg\ img.jpg);
+}
+.text{
+    margin-top: 150px;
+}
+.courses{
+    background-color: #1C1C1C;
+    height: 650px;
+}
+.courses h1{
+    color: white;
+    padding: 20px;
+    font-size: 2.5rem;
+}
+.courses .box h1{
+    padding-bottom: 5px;
+    border-bottom: 2px solid white;
+}
+.courses h3{
+    margin-top: 10px;
+}
+.courses-avail2{
+    display: flex;
+}
+.courses-avail, .courses-avail2{
+    margin-left: 60px;
+}
+.courses-avail .box img{
+    height: 220px;
+    width: 275px;
+}
+.courses-avail2 .box img{
+    height: 220px;
+    width: 280px;
+}
+.box a{
+    color: black;
+    background-color:white;
+    padding: 6px 20px;
+    text-decoration: none;
+}
+.courses-avail{
+    display: flex;
+}
+.box h1{
+    font-size: 35px;
+}
+.box{
+    padding: 30px 32px;
+    margin: 0px;
+    color: white;
+}
+.box h3{
+    padding-bottom: 16px;
+}
+.box img{
+    padding-top: 20px;
+    padding-left: 23px;
+}
+.services{
+    background-color: #1C1C1C;
+}
+.services h1{
+    color: white;
+    font-size: 2.2rem;
+}
+.total-services{
+    margin-top: 30px;
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+.service-box img{
+    height: 260px;
+    width: 300px;
+}
+.service-box p{
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+}
+.service-box a:hover{
+    background-color: #1C1C1C;
+    color: white;
+}
+.service-box a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: white;
+    color: black;
+}
+.service-box{
+    width: 490px;
+    padding: 30px;
+}
+.about{
+    background-color:#1C1C1C;
+}
+.about h1, .about p{
+    color: white;
+}
+.about hr{
+    margin-bottom: 40px;
+}
+.about-cont{
+    width:60vw;
+    margin: auto;
+    font-size: 1.5rem;
+}
+.about h1{
+    font-size: 2.6rem;
+    padding: 10px;
+}
+.gap2{
+    background-color: #1C1C1C;
+    height: 30px;
+}
+.gap{
+    background-color: #1C1C1C;
+    height: 60px;
+}
+.footer{
+    background-color: #EDEDED;
+    display: flex;
+}
+.box1, .box2, .box3{
+    padding: 50px 100px;
+    color: black;
+}
+.box1 a{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+.box1 a:hover{
+    color: white;
+    color: black;
+}
+.box3 a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+.box3 a:hover{
+    background-color:black;
+    color: white;
+}
+.box3{
+    padding-top: 50px;
+}
+.box3 input{
+    background-color: #EDEDED;
+    border: 2px solid black;
+    padding: 13px;
+    margin: 4px;
+    color: black;
+}
+.box3 input::placeholder{
+    color: black;
+}
+.deep-footer{
+    background-color: #EDEDED;
+}
+.deep-footer h2{
+    font-size: 1.4rem;
+    padding: 10px;
+    color: black;
+}

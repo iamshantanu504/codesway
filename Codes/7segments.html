@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <title>Seven Segments</title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="logo.png" alt=""></span>
+        <div class="content center">
+            Seven Segments
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li>
+                <pre class="language-js"><code>
+#include <SevSeg.h>
+
+int pinA = 11;int pinB = 7;int pinC = 4;int pinD = 2;
+int pinE = 1;int pinF = 10;int pinG = 5;
+int pinDP = 3;int D1 = 12;int D2 = 9;int D3 = 8; int D4 = 6;
+
+void setup() {
+pinMode(pinA, OUTPUT);
+pinMode(pinB, OUTPUT);
+pinMode(pinC, OUTPUT);
+pinMode(pinD, OUTPUT);
+pinMode(pinE, OUTPUT);
+pinMode(pinF, OUTPUT);
+pinMode(pinG, OUTPUT);
+pinMode(pinDP, OUTPUT);
+pinMode(D1, OUTPUT);
+pinMode(D2, OUTPUT);
+pinMode(D3, OUTPUT);
+pinMode(D4, OUTPUT);
+}
+
+void loop() {
+ 
+  digit1();zero();delay(500);
+  digit2();one();delay(500);
+  digit3();two();delay(500);
+  digit4();three();delay(500);
+  digit3();four();delay(500);
+  digit2();five();delay(500);
+  digit1();six();delay(500);
+  digit2();seven();delay(500);
+  digit3();eight();delay(500);
+  digit4();nine();delay(500);
+ 
+  all4Digits();
+  allNumbers();
+
+}
+
+
+void zero(){
+digitalWrite(pinA, LOW);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, LOW);
+digitalWrite(pinE, LOW);
+digitalWrite(pinF, LOW);
+digitalWrite(pinG, HIGH);
+  }
+
+  void one(){
+digitalWrite(pinA, HIGH);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, HIGH);
+digitalWrite(pinE, HIGH);
+digitalWrite(pinF, HIGH);
+digitalWrite(pinG, HIGH);
+}
+
+void two(){
+  digitalWrite(pinA, LOW);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, HIGH);
+digitalWrite(pinD, LOW);
+digitalWrite(pinE, LOW);
+digitalWrite(pinF, HIGH);
+digitalWrite(pinG, LOW);
+  }
+ 
+  void three(){
+    digitalWrite(pinA, LOW);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, LOW);
+digitalWrite(pinE, HIGH);
+digitalWrite(pinF, HIGH);
+digitalWrite(pinG, LOW);
+    }
+   
+  void four(){
+    digitalWrite(pinA, HIGH);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, HIGH);
+digitalWrite(pinE, HIGH);
+digitalWrite(pinF, LOW);
+digitalWrite(pinG, LOW);
+    }
+   
+  void five(){
+    digitalWrite(pinA, LOW);
+digitalWrite(pinB, HIGH);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, LOW);
+digitalWrite(pinE, HIGH);
+digitalWrite(pinF, LOW);
+digitalWrite(pinG, LOW);
+    }
+   
+  void six(){
+    digitalWrite(pinA, LOW);
+digitalWrite(pinB, HIGH);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, LOW);
+digitalWrite(pinE, LOW);
+digitalWrite(pinF, LOW);
+digitalWrite(pinG, LOW);
+    }
+   
+  void seven(){
+    digitalWrite(pinA, LOW);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, HIGH);
+digitalWrite(pinE, HIGH);
+digitalWrite(pinF, HIGH);
+digitalWrite(pinG, HIGH);
+    }
+   
+  void eight(){
+    digitalWrite(pinA, LOW);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, LOW);
+digitalWrite(pinE, LOW);
+digitalWrite(pinF, LOW);
+digitalWrite(pinG, LOW);
+    }
+   
+  void nine(){
+    digitalWrite(pinA, LOW);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, HIGH);
+digitalWrite(pinE, HIGH);
+digitalWrite(pinF, LOW);
+digitalWrite(pinG, LOW);
+    }
+
+    void allNumbers(){
+one();delay(500);
+two();delay(500);
+three();delay(500);
+four();delay(500);
+five();delay(500);
+six();delay(500);
+seven();delay(500);
+eight();delay(500);
+nine();delay(500);
+      }
+
+  void turnOffAllSegments(){
+          digitalWrite(pinA, LOW);
+digitalWrite(pinB, LOW);
+digitalWrite(pinC, LOW);
+digitalWrite(pinD, LOW);
+digitalWrite(pinE, LOW);
+digitalWrite(pinF, LOW);
+digitalWrite(pinG, LOW);
+          }
+
+
+    void digit1(){
+      digitalWrite(D1, HIGH);
+digitalWrite(D2, LOW);
+digitalWrite(D3, LOW);
+digitalWrite(D4, LOW);
+      }
+     
+    void digit2(){
+      digitalWrite(D1, LOW);
+digitalWrite(D2, HIGH);
+digitalWrite(D3, LOW);
+digitalWrite(D4, LOW);
+      }
+     
+    void digit3(){
+      digitalWrite(D1, LOW);
+digitalWrite(D2, LOW);
+digitalWrite(D3, HIGH);
+digitalWrite(D4, LOW);
+      }
+     
+    void digit4(){
+      digitalWrite(D1, LOW);
+digitalWrite(D2, LOW);
+digitalWrite(D3, LOW);
+digitalWrite(D4, HIGH);
+      }
+
+      void all4Digits(){
+        digitalWrite(D1, HIGH);
+digitalWrite(D2, HIGH);
+digitalWrite(D3, HIGH);
+digitalWrite(D4, HIGH);
+        }
+
+distence sensor
+
+int Time ;
+int distance;
+
+void setup()
+{
+pinMode(2,OUTPUT);
+pinMode(3,INPUT);
+pinMode(4,OUTPUT);
+pinMode(5,OUTPUT);
+pinMode(6,OUTPUT);
+pinMode(7,OUTPUT);
+pinMode(8,OUTPUT);
+Serial.begin(9600);
+
+
+}
+
+void loop()
+{
+digitalWrite(2,HIGH);
+delayMicroseconds(10);
+digitalWrite(2,LOW);
+delayMicroseconds(5);
+digitalWrite(2,HIGH);
+delayMicroseconds(10);
+
+Time = pulseIn(3,HIGH);
+
+distance= 0.0343*Time/2;
+Serial.print("distane from sensor to object is =");
+Serial.println(distance);
+delay(5);
+
+
+if(distance>1 && distance <=10 )
+{
+
+digitalWrite(4,HIGH);
+digitalWrite(5,HIGH);
+digitalWrite(6,HIGH);
+digitalWrite(7,HIGH);
+digitalWrite(8,HIGH);
+}
+
+if(distance>10 && distance <=15)
+{
+digitalWrite(4,HIGH);
+digitalWrite(5,HIGH);
+digitalWrite(6,HIGH);
+digitalWrite(7,HIGH);
+digitalWrite(8,LOW);
+}
+
+
+if(distance>15 && distance <=20)
+{
+
+digitalWrite(4,HIGH);
+digitalWrite(5,HIGH);
+digitalWrite(6,HIGH);
+digitalWrite(7,LOW);
+digitalWrite(8,LOW);
+
+}
+
+if(distance>20 && distance <=25)
+{
+digitalWrite(4,HIGH);
+digitalWrite(5,HIGH);
+digitalWrite(6,LOW);
+digitalWrite(7,LOW);
+digitalWrite(8,LOW);
+
+
+}
+if(distance>25 && distance <=30)
+{
+digitalWrite(4,HIGH);
+digitalWrite(5,LOW);
+digitalWrite(6,LOW);
+digitalWrite(7,LOW);
+digitalWrite(8,LOW);
+}
+
+if(distance>30)
+{
+digitalWrite(4,LOW);
+digitalWrite(5,LOW);
+digitalWrite(6,LOW);
+digitalWrite(7,LOW);
+digitalWrite(8,LOW);
+
+}
+}
+                    
+                </code></pre>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

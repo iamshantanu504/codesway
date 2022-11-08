@@ -1,0 +1,86 @@
+4<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Potta+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="prism.css">
+    <script src="prism.js"></script>
+    <title>Smart Dustbin    </title>
+</head>
+
+<body>
+    <nav>
+        <span class="logo"><img src="logo.png" alt=""></span>
+        <div class="content center">
+            Smart Dustbin
+        </div>
+    </nav>
+    <div class="container">
+        <ol>
+            <li>HTML BoilerPlate
+                <pre class="language-js"><code>
+#include <Servo.h>
+Servo servo;    
+int trigPin = 5;    
+int echoPin = 6;  
+int servoPin = 7;
+int led= 10;
+long duration, dist, average;  
+long aver[3];  
+
+
+void setup() {      
+    Serial.begin(9600);
+    servo.attach(servoPin);  
+    pinMode(trigPin, OUTPUT);  
+    pinMode(echoPin, INPUT);  
+    servo.write(0);      
+    delay(100);
+    servo.detach();
+}
+
+void measure() {  
+ digitalWrite(10,HIGH);
+digitalWrite(trigPin, LOW);
+delayMicroseconds(5);
+digitalWrite(trigPin, HIGH);
+delayMicroseconds(15);
+digitalWrite(trigPin, LOW);
+pinMode(echoPin, INPUT);
+duration = pulseIn(echoPin, HIGH);
+dist = (duration/2) / 29.1;
+}
+void loop() {
+  for (int i=0;i<=2;i++) {  
+    measure();              
+   aver[i]=dist;            
+    delay(10);          
+  }
+ dist=(aver[0]+aver[1]+aver[2])/3;    
+
+if ( dist<50 ) {
+
+ servo.attach(servoPin);
+  delay(1);
+ servo.write(0);  
+ delay(3000);      
+ servo.write(150);    
+ delay(1000);
+ servo.detach();      
+}
+Serial.print(dist);
+
+                    
+                </code></pre>
+            </li>
+            
+        </ol>
+    </div>
+</body>
+
+</html>

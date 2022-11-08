@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+    
+}
+.logo img{
+    width: 62px;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:black;
+    color: white;
+    height: 86px;
+}
+.content{
+    font-family: 'Potta One', cursive;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+.container{
+    width: 60vw;
+    margin: auto;
+    padding: 32px 0px;
+    font-family: 'Baloo Bhai 2', cursive;
+    font-size: 1.5rem;
+}
+.container li{
+    padding: 6px;
+}
